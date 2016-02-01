@@ -4,6 +4,7 @@ title: The Riddler, Politicians, and General Induction Problems
 date: 2016-01-29
 ---
 
+The following question comes to us from 538's [The Riddler](http://fivethirtyeight.com/tag/the-riddler/), a wonderful weekly column written by [Ollie Roeder](https://twitter.com/ollie).
 
 >Suppose that five politicians, disgusted with the current two-party system, come together to choose a third-party candidate to run in the 2016 presidential election. The politicians’ names are Anders (A), Blinton (B), Cubio (C), Drump (D) and Eruz (E). Not wanting to spend all their time campaigning in Iowa and New Hampshire in winter, they decide instead to pick which of them will be the candidate at a secret meeting with just the five of them. The voting procedure is as follows: They will first hold a vote of A versus B. (The five politicians are the only voters.) The winner of that vote will then be paired against C. That winner will be paired against D, and finally that winner will be paired against E. They will declare the winner of that last matchup to be their candidate.
 
@@ -23,8 +24,8 @@ date: 2016-01-29
 
 >Question 1: Who will be chosen as the presidential candidate?
 
-=====
-This question comes to us from 538's [The Riddler](http://fivethirtyeight.com/tag/the-riddler/), a wonderful weekly column written by [Ollie Roeder](https://twitter.com/ollie).  Brain teaser wonks may recognize this as a variant of the [Pirate Game](https://en.wikipedia.org/wiki/Pirate_game) or the [Survival of the Sheep](http://www.braingle.com/brainteasers/9026/survival-of-the-sheep.html), but more generally it's a question of induction.  
+
+Brain teaser wonks may recognize this as a variant of the [Pirate Game](https://en.wikipedia.org/wiki/Pirate_game) or the [Survival of the Sheep](http://www.braingle.com/brainteasers/9026/survival-of-the-sheep.html), but more generally it's a question of induction.  
 
 In order to answer the question "What will the politician's vote for in this round?" you must first answer the question "what happens in the next round if the vote isn't decided in this round?"  But in order to answer that question, you will have to look at what happens in the round-after-next, and the the round-after-the-round-after-next, etc.  To solve the problem, you must start in the last round, and work your way forward.
 
