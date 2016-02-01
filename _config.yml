@@ -1,3 +1,10 @@
 name: Jake Walker- Intrepid Explorer
-kramdown: 
+# Build settings
+markdown: kramdown
+
+kramdown:
+  auto_ids: true
   input: GFM
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: false
