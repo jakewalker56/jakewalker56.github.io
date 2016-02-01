@@ -276,7 +276,7 @@ Second, there's some weirdness going on with regard to even and odd numbers of c
 
 ![Win Percentage as a function of Voting Location, smaller candidate pools]({{ site.url }}/assets/5_6_7_8_9_10_win_percentage.png)
 
-So that's super weird, right?  It seems like you get an even larger comparative advantage by going first if there is an even number of candidates vs. an odd number of candidates.  We suspect this is perhaps because my implementation has ties going to the "stop the votes, we have a winner" side.  If we change our `<=` to just `<`, we get the following:
+So that's super weird, right?  It seems like you get an even larger comparative advantage by going first if there is an even number of candidates vs. an odd number of candidates.  We suspect this is perhaps because our implementation has ties going to the "stop the votes, we have a winner" side.  If we change our `<=` to just `<`, we get the following:
 
 ![Win Percentage as a function of Voting Location, smaller candidate pools, different tiebreaker]({{ site.url }}/assets/5_6_7_8_9_10_win_percentage_tiebreak.png)
 
