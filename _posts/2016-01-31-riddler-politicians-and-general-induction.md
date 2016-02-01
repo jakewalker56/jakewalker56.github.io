@@ -64,7 +64,7 @@ C | D
 D | D
 E | D
 
-***Winner: D***
+**Winner: D**
 
 #####Fourth-to-Last Round Voting (1st round)
 Candidate | Vote's for...
@@ -75,7 +75,7 @@ C | D
 D | D
 E | D
 
-***Winner: D***
+**Winner: D**
 
 Hence, we see that D is going to win.  In the first round, candidate's C, D, and E all prefer the outcome of the second round to voting for A, so they will all vote for B.  In the second round, candidates C, D, and E all prefer the outcome of the third round to voting for B, so they will all vote for C.  In the third round, candidates B, D, and E all prefer the outcome of the 4th round over voting for C, so they will all vote for D.  In the fourth and final round, candidates A, C, and D all prefer candidate D to candidate E, so they will vote for D, and D takes it.
 
