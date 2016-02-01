@@ -81,7 +81,7 @@ Hence, we see that D is going to win.  In the first round, candidate's C, D, and
 
 This turns out to be a fairly easily generalizable problem.  All we really need are the order of voting rounds, and a list of candidate preferences, and we can simply walk backwards through the rounds and figure out optimal behavior.  That code (in Ruby) looks like this:
 
-```
+```ruby
 def simulate(preferences, vote_order)
 	winners_by_round = []
 	num_rounds = vote_order.length - 1
@@ -113,13 +113,12 @@ def simulate(preferences, vote_order)
 	end
 	return winners_by_round
 end
-
 ```
 Note that the winners_by_round[i] value answers the question "given that we made it to round i, who is going to win?"  You can find the fully-commented code [here](https://github.com/jakewalker56/ruby-scripts/blob/master/induction_solver.rb). 
 
 Now to solve our specific version of the problem, we call our simulate function with the following arguments:
 
-```
+```ruby
 preferences = []
 #Candidate A: A > B > C > D > E
 preferences << [0, 1, 2, 3, 4]
@@ -153,7 +152,7 @@ In this twist of the problem, we ask ourselves the question "What happens if we 
 
 In this case, we can simply loop through everyone else's preferences and see which one yields the best result:
 
-```
+```ruby
 #worst thing that can happen is A's least favorite wins
 q2_winner_array = [preferences[0].last]
 q2_transfer = 0
@@ -177,7 +176,7 @@ The trick to this is that it relies on that perfect information assumption state
 
 Note here that the voting order matters for question 2-4!  If we switch up the voting order as below, we get a different result:
 
-```
+```ruby
 preferences = []
 #Candidate A: A > B > C > D > E
 preferences << [0, 1, 2, 3, 4]
@@ -213,7 +212,7 @@ So if order matters, you might wonder whether you would prefer to be the first v
 
 To investigate this question, we'll simulate randomly generated preferences with different numbers of candidates, and we'll see who ends up winning the most often.  We'll plot this to a file using [gnuplot](https://github.com/rdp/ruby_gnuplot):
 
-```
+```ruby
 Gnuplot.open do |gp|
   Gnuplot::Plot.new( gp ) do |plot|
   

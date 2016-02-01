@@ -1,4 +1,5 @@
 name: Jake Walker, Intrepid Explorer
-markdown:    kramdown
+markdown: kramdown
+
 kramdown:
   input: GFM
