@@ -213,7 +213,7 @@ Extending the Question
 
 So if order matters, you might wonder whether you would prefer to be the first voted on, or the last?  Going last in this context is fundamentally different than getting a "buy week" in sports, because the whole system is deterministic.  There's no "percentage chance of losing" in the first round, so it's not obvious whether you'd prefer to be first, last, or in the middle.
 
-To investigate this question, we'll simulate randomly generated preferences with different numbers of candidates, and we'll see who ends up winning the most often.  We'll plot this to a file using [gnuplot](https://github.com/rdp/ruby_gnuplot):
+To investigate this question, we'll simulate randomly generated preferences with different numbers of candidates, and we'll see who ends up winning the most often (we assume everyone always prefers themselves).  We'll plot this to a file using [gnuplot](https://github.com/rdp/ruby_gnuplot):
 
 {% highlight ruby %}
 Gnuplot.open do |gp|
@@ -241,6 +241,10 @@ Gnuplot.open do |gp|
 			preferences = []
 			num_candidates.times do |j|
 				preferences[j] = (0..(num_candidates-1)).to_a.shuffle
+				#remove himself from preferences
+				preferences[j].delete(j)
+				#add himself to front- everyone prefers themselves!
+				preferences[j].unshift(j)
 			end
 			winner_array << simulate(preferences, vote_order, debug)[0]
 		end
