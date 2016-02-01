@@ -82,7 +82,6 @@ Hence, we see that D is going to win.  In the first round, candidate's C, D, and
 This turns out to be a fairly easily generalizable problem.  All we really need are the order of voting rounds, and a list of candidate preferences, and we can simply walk backwards through the rounds and figure out optimal behavior.  That code (in Ruby) looks like this:
 
 {% highlight ruby %}
-```ruby
 def simulate(preferences, vote_order)
 	winners_by_round = []
 	num_rounds = vote_order.length - 1
@@ -114,7 +113,6 @@ def simulate(preferences, vote_order)
 	end
 	return winners_by_round
 end
-```
 {% endhighlight %}
 
 Note that the `winners_by_round[i]` value answers the question "given that we made it to round i, who is going to win?"  You can find the fully-commented code [here](https://github.com/jakewalker56/ruby-scripts/blob/master/induction_solver.rb). 
