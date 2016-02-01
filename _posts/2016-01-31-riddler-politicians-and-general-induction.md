@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Riddler, Politicians, and General Induction Problems
-date: 2016-01-29
+date: 2016-01-31
 ---
 
 The following question comes to us from 538's [The Riddler](http://fivethirtyeight.com/tag/the-riddler/), a wonderful weekly column written by [Ollie Roeder](https://twitter.com/ollie).
