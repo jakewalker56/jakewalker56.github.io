@@ -77,11 +77,11 @@ D | D
 E | D
  
 
-Hence, we see that D is going to win.  In the first round, candidate's C, D, and E all prefer the outcome of the second round to voting for A, so they will all vote for B.  In the second round, candidates C, D, and E all prefer the outcome of the third round to voting for B, so they will all vote for C.  In the third round, candidates B, D, and E all prefer the outcome of the 4th round over voting for C, so they will all vote for D.  In the fourth and final round, candidates A, C, and D all prefer candidate D to candidate E, so they will vote for D, and D takes it.
+Hence, we see that D is going to win it all.  In the first round, candidate's C, D, and E all prefer the outcome of the second round to voting for A, so they will all vote for B.  In the second round, candidates C, D, and E all prefer the outcome of the third round to voting for B, so they will all vote for C.  In the third round, candidates B, D, and E all prefer the outcome of the 4th round over voting for C, so they will all vote for D.  In the fourth and final round, candidates A, C, and D all prefer candidate D to candidate E, so they will vote for D, and D takes it.
 
 This turns out to be a fairly easily generalizable problem.  All we really need are the order of voting rounds, and a list of candidate preferences, and we can simply walk backwards through the rounds and figure out optimal behavior.  That code (in Ruby) looks like this:
 
-{% highlight ruby %}
+```ruby
 def simulate(preferences, vote_order)
 	winners_by_round = []
 	num_rounds = vote_order.length - 1
@@ -113,13 +113,13 @@ def simulate(preferences, vote_order)
 	end
 	return winners_by_round
 end
-{% endhighlight %}
+```
 
 Note that the `winners_by_round[i]` value answers the question "given that we made it to round i, who is going to win?"  You can find the fully-commented code [here](https://github.com/jakewalker56/ruby-scripts/blob/master/induction_solver.rb). 
 
 Now to solve our specific version of the problem, we call our simulate function with the following arguments:
 
-```ruby
+``` ruby
 preferences = []
 #Candidate A: A > B > C > D > E
 preferences << [0, 1, 2, 3, 4]
@@ -145,6 +145,7 @@ Confirmed: D is our winner.  Now let's take a crack at part 2!
 
 
 >Now assume that A has the flu and is forced to miss the voting meeting. He is allowed to transfer his vote to someone else, but he can’t make that other person commit to vote against her own self-interest.
+
 >Question 2: To whom should he transfer his vote, given his candidate preference outlined above (A > B > C > D > E)?
 
 >Question 3: Who will win the candidacy now?
@@ -176,9 +177,9 @@ After running this script, we find that by replacing his preferences with those 
 
 This is a counterintuitive outcome.  This tells us that changing your utility function changes the outcome, sometimes for the better according to your old utility function.  That is to say, sometimes you can't get what you want, but you would get it if only you wanted something else.
 
-The trick to all this is that it relies on that perfect information assumption stated above.  Everyone else's actions are causally influenced by your preferences, so you can end up with weird results like this.  This tells us that if you can FAKE a specific voting preference, you can manipluate everyone else into giving you what you want.  What we have here is mathematical proof that lying can be beneficial.
+The trick to all this is that it relies on that perfect information assumption stated above.  Everyone else's actions are causally influenced by your preferences, so you can end up with weird results like this.  This tells us that if you can FAKE a specific voting preference, you can manipluate everyone else into giving you what you want.  What we have here is mathematical proof that lying totally works.
 
-Note here that the voting order matters for question 2-4!  If we switch up the voting order as below, we get a different result:
+Note here that the voting order matters for question 2-4. If we switch up the voting order as below, we get a different result:
 
 ```ruby
 preferences = []
@@ -271,11 +272,21 @@ This yields the following graph:
 
 So a few interesting things here.  First, it's hugely advantageous to go first.  In the case where there's 100 candidates, you have a 20% chance of winning when you go first.  Going last give you approximately a 0% chance.
 
-Second, there's some weirdness going on here.  You might wonder why going first is so much better with 10 candidates than with 5 candidates, but also much better with 10 candidates than with 100 candidates.  In other words, why do these lines cross at all?  Let's examine further by plotting 5-10 candidates on their own graph:
+Second, there's some weirdness going on with regard to even and odd numbers of candidates.  You might wonder why going first is so much better with 10 candidates than with 5 candidates, but also much better with 10 candidates than with 100 candidates.  In other words, why do these lines cross at all?  Let's examine further by plotting 5-10 candidates on their own graph:
 
 ![Win Percentage as a function of Voting Location, smaller candidate pools]({{ site.url }}/assets/5_6_7_8_9_10_win_percentage.png)
 
-So that's super weird, right?  It seems like you get an even larger comparative advantage by going first if there is an even number of candidates vs. an odd number of candidates.  I have no idea what mathematical truth is underlying this fact.  Science!
+So that's super weird, right?  It seems like you get an even larger comparative advantage by going first if there is an even number of candidates vs. an odd number of candidates.  We suspect this is perhaps because my implementation has ties going to the "stop the votes, we have a winner" side.  If we change our `<=` to just `<`, we get the following:
+
+![Win Percentage as a function of Voting Location, smaller candidate pools, different tiebreaker]({{ site.url }}/assets/5_6_7_8_9_10_win_percentage_tiebreak.png)
+
+And here we see a complete reversal!  Candidates get a significantly higher advantage by going first if there are an odd number of candidates than even.  Not only that, but we see big jumps in win percentage at the tail end of the even candidate vote order.  This happens because for small numbers of candidates, we're going to see a whole lot of ties happen.  If nobody ever gets better than a tie, and we're down to the last two people, we break the tie by going with the person who's at the end of the voting queue.  
+
+We expect that kick at the end to get smaller and smaller as the number of candidates gets larger, because we are less likely to get to the end with a tie.  We check what happens for the n=100 case:
+
+![Win Percentage as a function of Voting Location, large number of candidates, different tiebreaker]({{ site.url }}/assets/100_win_percentage_tiebreak.png)
+
+Science!
 
 
 
