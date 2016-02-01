@@ -1,6 +1,8 @@
-name: Nothing To See Here
+name: Jake Walker- Intrepid Explorer
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 
-redcarpet:
-  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
+kramdown:
+  input: GFM
+  enable_coderay: true
+  use_coderay: true

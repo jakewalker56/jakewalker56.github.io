@@ -1,27 +1,20 @@
 body {
-    margin: 60px auto;
-    width: 70%;
+    margin: 60px auto !important;
+    width: 70% !important;
 }
 nav ul, footer ul {
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    padding: 0px;
-    list-style: none;
-    font-weight: bold;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif' !important;
+    padding: 0px !important;
+    list-style: none !important;
+    font-weight: bold !important;
 }
 nav ul li, footer ul li {
-    display: inline;
-    margin-right: 20px;
-}
-a {
-    text-decoration: none;
-    color: #999;
-}
-a:hover {
-    text-decoration: underline;
+    display: inline !important;
+    margin-right: 20px !important;
 }
 h1 {
-    font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    font-size: 3em !important;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif' !important;
 }
 p {
     font-size: 1.5em;
@@ -29,15 +22,49 @@ p {
     color: #333;
 }
 footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #d5d5d5 !important;
+    font-size: .8em !important;
 }
 
 ul.posts { 
-    margin: 20px auto 40px; 
-    font-size: 1.5em;
+    margin: 20px auto 40px !important; 
+    font-size: 1.5em !important;
 }
 
 ul.posts li {
-    list-style: none;
+    list-style: none !important;
+}
+
+table {
+    margin: 4px !important;
+    padding: 4px !important;
+    border-bottom: 1px solid black !important;
+}
+
+th {
+    margin: 4px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    border-bottom: 1px solid black !important;
+}
+td {
+    margin: 4px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    padding-top: 3px !important;
+    border-left: 1px solid black !important;
+    border-right: 1px solid black !important;
+}
+table > tbody > tr:nth-child(odd) > td,
+table > tbody > tr:nth-child(odd) > th {
+  background-color: #f9f9f9;
+}
+table tbody > tr:hover > td,
+table > tbody > tr:hover > th {
+  background-color: #f5f5f5;
+}
+p {
+    padding-top: 6px;
 }
