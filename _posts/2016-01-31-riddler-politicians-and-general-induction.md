@@ -286,6 +286,8 @@ We expect that kick at the end to get smaller and smaller as the number of candi
 
 ![Win Percentage as a function of Voting Location, large number of candidates, different tiebreaker]({{ site.url }}/assets/100_win_percentage_tiebreak.png)
 
+You might wonder why going first is such an advantage, even when ties don't go your way?  I don't have a convincing mathematical argument as to why this is true, but my intuition is that unless one person is strongly preferred (which will occasionally happen in a random distribution), about 50% of the people 
+
 Science!
 
 
