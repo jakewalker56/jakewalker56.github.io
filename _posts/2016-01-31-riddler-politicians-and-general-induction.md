@@ -31,8 +31,7 @@ In order to answer the question "What will the politician's vote for in this rou
 
 So let's ask ourselves: If we make it to the last round, what will happen?  We simply ask ourselves which candidate prefers D over E, and which prefers E over D?
 
-Last Round Voting (4th round)
-=====
+#####Last Round Voting (4th round)
 Candidate | Vote's for...
 ---|---
 A | D
@@ -45,8 +44,7 @@ So we see that if we make it to the last round, candidate D will win.
 
 Now let's look at the second to last round (C vs. [Winner of next round]).  If C doesn't win, we know that D will win.  So now we look again, and we ask ourselves which candidates prefer C over D?
 
-Second-to-Last Round Voting (3rd round)
-=====
+#####Second-to-Last Round Voting (3rd round)
 Candidate | Vote's for...
 ---|---
 A | C
@@ -57,8 +55,7 @@ E | D
 
 So once again, D wins!  We can repeat this process for the previous rounds as well:
 
-Third-to-Last Round Voting (2nd round)
-=====
+#####Third-to-Last Round Voting (2nd round)
 Candidate | Vote's for...
 ---|---
 A | B
@@ -69,8 +66,7 @@ E | D
 
 ***Winner: D***
 
-Fourth-to-Last Round Voting (1st round)
-=====
+#####Fourth-to-Last Round Voting (1st round)
 Candidate | Vote's for...
 ---|---
 A | A
