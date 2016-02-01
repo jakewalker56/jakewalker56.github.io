@@ -81,6 +81,7 @@ Hence, we see that D is going to win.  In the first round, candidate's C, D, and
 
 This turns out to be a fairly easily generalizable problem.  All we really need are the order of voting rounds, and a list of candidate preferences, and we can simply walk backwards through the rounds and figure out optimal behavior.  That code (in Ruby) looks like this:
 
+{% highlight ruby %}
 ```ruby
 def simulate(preferences, vote_order)
 	winners_by_round = []
@@ -114,10 +115,13 @@ def simulate(preferences, vote_order)
 	return winners_by_round
 end
 ```
+{% endhighlight %}
+
 Note that the `winners_by_round[i]` value answers the question "given that we made it to round i, who is going to win?"  You can find the fully-commented code [here](https://github.com/jakewalker56/ruby-scripts/blob/master/induction_solver.rb). 
 
 Now to solve our specific version of the problem, we call our simulate function with the following arguments:
 
+{% highlight ruby %}
 ```ruby
 preferences = []
 #Candidate A: A > B > C > D > E
@@ -139,6 +143,7 @@ vote_order = [0, 1, 2, 3, 4]
 #Question 1: Who will be chosen as the presidential candidate?
 q1_winner = simulate(preferences, vote_order, debug)[0]
 ```
+{% endhighlight %}
 
 Confirmed: D is our winner.  Now let's take a crack at part 2!
 
@@ -170,6 +175,7 @@ q2_transfer = 0
 	end
 end
 ```
+{% endhighlight %}
 
 After running this script, we find that by replacing his preferences with those from candidate E, candidate A can force himself to become the new winner!  This happens because given the new preferences, E will win if we make it to round 2, and the other three candidates all prefer A over E, so they vote for A.
 
@@ -179,6 +185,7 @@ The trick to all this is that it relies on that perfect information assumption s
 
 Note here that the voting order matters for question 2-4!  If we switch up the voting order as below, we get a different result:
 
+{% highlight ruby %}
 ```ruby
 preferences = []
 preferences << [0, 1, 2, 3, 4]
@@ -204,6 +211,7 @@ q2_transfer = 0
 	end
 end
 ```
+{% endhighlight %}
 
 In this world, A would instead tranfer their vote to either C or D, and D would still end up winning.
 
@@ -214,7 +222,7 @@ So if order matters, you might wonder whether you would prefer to be the first v
 
 To investigate this question, we'll simulate randomly generated preferences with different numbers of candidates, and we'll see who ends up winning the most often.  We'll plot this to a file using [gnuplot](https://github.com/rdp/ruby_gnuplot):
 
-```ruby
+{% highlight ruby %}
 Gnuplot.open do |gp|
   Gnuplot::Plot.new( gp ) do |plot|
   
@@ -258,7 +266,7 @@ Gnuplot.open do |gp|
 
   end
 end
-```
+{% endhighlight %}
 
 This yields the following graph:
 
