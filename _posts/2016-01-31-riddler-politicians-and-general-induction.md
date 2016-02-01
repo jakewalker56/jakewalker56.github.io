@@ -9,19 +9,12 @@ The following question comes to us from 538's [The Riddler](http://fivethirtyeig
 >Suppose that five politicians, disgusted with the current two-party system, come together to choose a third-party candidate to run in the 2016 presidential election. The politicians’ names are Anders (A), Blinton (B), Cubio (C), Drump (D) and Eruz (E). Not wanting to spend all their time campaigning in Iowa and New Hampshire in winter, they decide instead to pick which of them will be the candidate at a secret meeting with just the five of them. The voting procedure is as follows: They will first hold a vote of A versus B. (The five politicians are the only voters.) The winner of that vote will then be paired against C. That winner will be paired against D, and finally that winner will be paired against E. They will declare the winner of that last matchup to be their candidate.
 
 >Each of A, B, C, D and E wants to be the presidential candidate themselves, but also has clear preferences over the others. Furthermore, the politicians’ preferences are common knowledge. Their preferences are as follows (“X > Y” means Candidate X is preferred to Candidate Y):
-
 >Candidate A: A > B > C > D > E
-
 >Candidate B: B > A > E > D > C
-
 >Candidate C: C > D > A > E > B
-
 >Candidate D: D > B > A > E > C
-
 >Candidate E: E > D > B > C > A
-
 >All of the politicians are forward-looking and vote strategically.
-
 >Question 1: Who will be chosen as the presidential candidate?
 
 
