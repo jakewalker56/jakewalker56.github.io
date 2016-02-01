@@ -4,5 +4,5 @@ markdown: kramdown
 
 kramdown:
   input: GFM
-  enable_coderay: true
-  use_coderay: true
+
+syntax_highlighter: coderay

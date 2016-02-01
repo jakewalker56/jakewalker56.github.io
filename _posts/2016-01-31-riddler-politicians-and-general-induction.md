@@ -121,7 +121,6 @@ Note that the `winners_by_round[i]` value answers the question "given that we ma
 
 Now to solve our specific version of the problem, we call our simulate function with the following arguments:
 
-{% highlight ruby %}
 ```ruby
 preferences = []
 #Candidate A: A > B > C > D > E
@@ -143,7 +142,6 @@ vote_order = [0, 1, 2, 3, 4]
 #Question 1: Who will be chosen as the presidential candidate?
 q1_winner = simulate(preferences, vote_order, debug)[0]
 ```
-{% endhighlight %}
 
 Confirmed: D is our winner.  Now let's take a crack at part 2!
 
@@ -175,7 +173,6 @@ q2_transfer = 0
 	end
 end
 ```
-{% endhighlight %}
 
 After running this script, we find that by replacing his preferences with those from candidate E, candidate A can force himself to become the new winner!  This happens because given the new preferences, E will win if we make it to round 2, and the other three candidates all prefer A over E, so they vote for A.
 
@@ -185,7 +182,6 @@ The trick to all this is that it relies on that perfect information assumption s
 
 Note here that the voting order matters for question 2-4!  If we switch up the voting order as below, we get a different result:
 
-{% highlight ruby %}
 ```ruby
 preferences = []
 preferences << [0, 1, 2, 3, 4]
@@ -211,7 +207,6 @@ q2_transfer = 0
 	end
 end
 ```
-{% endhighlight %}
 
 In this world, A would instead tranfer their vote to either C or D, and D would still end up winning.
 
