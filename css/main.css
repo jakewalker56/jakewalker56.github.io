@@ -1,6 +1,6 @@
 body {
-    margin: 60px auto !important;
-    width: 70% !important;
+    margin: 60px !important;
+    width: 90% !important;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif' !important;
@@ -28,12 +28,12 @@ footer {
     font-size: .8em !important;
 }
 
-ul.posts { 
+ul.articles { 
     margin: 20px auto 40px !important; 
     font-size: 1.5em !important;
 }
 
-ul.posts li {
+ul.articles li {
     list-style: none !important;
 }
 

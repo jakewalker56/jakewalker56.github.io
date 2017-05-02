@@ -5,3 +5,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 
+collections:
+  articles:
+    output: true
+

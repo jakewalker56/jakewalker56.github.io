@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: The Riddler, Politicians, and General Induction Problems
 date: 2016-01-31
 ---

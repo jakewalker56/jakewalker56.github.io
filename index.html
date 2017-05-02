@@ -1,9 +1,11 @@
 ---
 layout: default
-title: Jake Walker, Look out behind you!
+title: Jake Walker
 ---
-<div class="blurb">
-	<h1>Hi there, I'm Jake!</h1>
-	<p>I'm mostly just curious how the world got the way it is</p>
-</div><!-- /.blurb -->
+	<h1>{{ page.title }}</h1>
+	<ul class="articles">
 
+	  {% for article in site.articles %}
+	    <li><a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></li>
+	  {% endfor %}
+	</ul>
