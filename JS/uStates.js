@@ -70,7 +70,7 @@
 		}
 
 		$('svg').fadeOut(300)
-		sleep(400).then(() => {
+		sleep(290).then(() => {
 		    d3.selectAll(id + " > *").remove();
 			d3.select(id).selectAll(".state")
 				.data(uStatePaths).enter().append("path").attr("class","state").attr("d",function(d){ return d.d;})
